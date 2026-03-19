@@ -16,8 +16,8 @@ const ZastoSection = () => (
       </p>
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {prednosti.map((p, i) => (
-          <div key={p.naslov} className={`flex gap-5 animate-fade-up-delay-${(i % 3) + 1}`}>
-            <div className="w-12 h-12 rounded-xl bg-secondary/15 flex items-center justify-center shrink-0">
+          <div key={p.naslov} className={`flex gap-5 glass-card p-6 hover-lift glow-gold-hover animate-fade-up-delay-${(i % 3) + 1}`}>
+            <div className="w-12 h-12 rounded-2xl bg-secondary/15 flex items-center justify-center shrink-0">
               <p.icon className="w-6 h-6 text-secondary" />
             </div>
             <div>
