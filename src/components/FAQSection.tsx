@@ -19,7 +19,7 @@ const FAQSection = () => (
       <p className="text-muted-foreground text-center mb-14">Pronađite odgovore na najčešća pitanja.</p>
       <Accordion type="single" collapsible className="space-y-3">
         {faqItems.map((item, i) => (
-          <AccordionItem key={i} value={`item-${i}`} className="border border-border rounded-xl px-5 bg-card">
+          <AccordionItem key={i} value={`item-${i}`} className="glass-card px-5 glow-gold-hover border-0">
             <AccordionTrigger className="text-sm font-medium hover:no-underline">{item.q}</AccordionTrigger>
             <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{item.a}</AccordionContent>
           </AccordionItem>

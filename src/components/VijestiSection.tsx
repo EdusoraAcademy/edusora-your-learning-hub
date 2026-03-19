@@ -15,7 +15,7 @@ const VijestiSection = () => (
       </p>
       <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {vijesti.map((v, i) => (
-          <article key={v.naslov} className={`group rounded-2xl border border-border bg-card p-6 hover-lift animate-fade-up-delay-${i + 1}`}>
+          <article key={v.naslov} className={`group glass-card p-6 hover-lift glow-gold-hover animate-fade-up-delay-${i + 1}`}>
             <div className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
               <Calendar className="w-3.5 h-3.5" />
               {v.datum}

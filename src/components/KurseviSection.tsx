@@ -38,9 +38,9 @@ const KurseviSection = () => (
         {kursevi.map((k, i) => (
           <div
             key={k.naziv}
-            className={`group rounded-2xl border border-border bg-card p-8 hover-lift animate-fade-up-delay-${i + 1}`}
+            className={`group glass-card p-8 hover-lift glow-gold-hover animate-fade-up-delay-${i + 1}`}
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
               <k.icon className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-lg font-semibold mb-2">{k.naziv}</h3>
