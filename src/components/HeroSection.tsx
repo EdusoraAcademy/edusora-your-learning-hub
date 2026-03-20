@@ -20,7 +20,7 @@ const HeroSection = () => {
           <span className="text-xs font-medium text-muted-foreground tracking-wider uppercase">Online Akademija</span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6 animate-fade-up-delay-1">
+        <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6 animate-fade-up-delay-1 leading-[0.9]">
           <span className="text-gradient drop-shadow-[0_0_30px_hsl(var(--glow-gold)/0.3)]">EDUSORA</span>
         </h1>
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
 
         <button
           onClick={scrollToKursevi}
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-sm hover-scale glow-gold-hover shadow-soft animate-fade-up-delay-3 transition-all duration-300"
+          className="neon-cta inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-sm hover-scale glow-gold-hover shadow-soft animate-fade-up-delay-3 transition-all duration-300 active:scale-[0.97]"
         >
           Istražite naše kurseve
         </button>
