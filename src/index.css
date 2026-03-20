@@ -183,9 +183,12 @@
     @apply transition-all duration-300 ease-out;
   }
 
-  .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px hsl(var(--glow-gold) / 0.2), var(--shadow-soft);
+  :root .hover-lift:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+      0 24px 48px -12px hsl(var(--glow-gold) / 0.3),
+      0 0 36px -4px hsl(var(--glow-gold) / 0.2),
+      0 8px 20px -4px hsl(235 100% 8% / 0.1);
   }
 
   .dark .hover-lift:hover {
