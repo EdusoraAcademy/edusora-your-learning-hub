@@ -136,10 +136,10 @@
 
   :root .glass-card {
     background: hsl(0 0% 100% / 0.55);
-    border: 1px solid hsl(0 0% 100% / 0.7);
+    border: 1px solid hsl(240 10% 88% / 0.8);
     box-shadow:
-      0 8px 32px -8px hsl(235 100% 8% / 0.06),
-      0 2px 8px -2px hsl(235 100% 8% / 0.04),
+      0 10px 40px -8px hsl(235 100% 8% / 0.12),
+      0 4px 16px -4px hsl(235 100% 8% / 0.08),
       inset 0 1px 0 0 hsl(0 0% 100% / 0.6);
   }
 
@@ -164,8 +164,11 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  .glow-gold-hover:hover {
-    box-shadow: 0 0 32px -2px hsl(var(--glow-gold) / 0.45), var(--shadow-soft);
+  :root .glow-gold-hover:hover {
+    box-shadow:
+      0 0 44px -2px hsl(var(--glow-gold) / 0.55),
+      0 0 16px -2px hsl(248 100% 34% / 0.15),
+      0 12px 40px -8px hsl(235 100% 8% / 0.14);
   }
 
   .dark .glow-gold-hover:hover {
@@ -180,9 +183,12 @@
     @apply transition-all duration-300 ease-out;
   }
 
-  .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px hsl(var(--glow-gold) / 0.2), var(--shadow-soft);
+  :root .hover-lift:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:
+      0 24px 48px -12px hsl(var(--glow-gold) / 0.3),
+      0 0 36px -4px hsl(var(--glow-gold) / 0.2),
+      0 8px 20px -4px hsl(235 100% 8% / 0.1);
   }
 
   .dark .hover-lift:hover {
@@ -195,11 +201,11 @@
 
   /* ── Hover scale ── */
   .hover-scale {
-    @apply transition-transform duration-200;
+    @apply transition-all duration-200 ease-out;
   }
 
-  .hover-scale:hover {
-    transform: scale(1.05);
+  :root .hover-scale:hover {
+    transform: scale(1.07);
   }
 
   .shadow-soft {
