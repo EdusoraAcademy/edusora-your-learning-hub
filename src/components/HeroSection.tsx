@@ -21,7 +21,14 @@ const HeroSection = () => {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6 animate-fade-up-delay-1 leading-[0.9]">
-          <span className="text-gradient drop-shadow-[0_0_30px_hsl(var(--glow-gold)/0.3)]">EDUSORA</span>
+          <span
+            className="text-gradient"
+            style={{
+              filter: 'drop-shadow(0 2px 8px hsl(49 65% 44% / 0.4)) drop-shadow(0 4px 20px hsl(248 100% 34% / 0.25))',
+            }}
+          >
+            EDUSORA
+          </span>
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground font-light mb-10 animate-fade-up-delay-2">
