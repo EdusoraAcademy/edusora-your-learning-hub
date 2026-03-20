@@ -201,11 +201,11 @@
 
   /* ── Hover scale ── */
   .hover-scale {
-    @apply transition-transform duration-200;
+    @apply transition-all duration-200 ease-out;
   }
 
-  .hover-scale:hover {
-    transform: scale(1.05);
+  :root .hover-scale:hover {
+    transform: scale(1.07);
   }
 
   .shadow-soft {
