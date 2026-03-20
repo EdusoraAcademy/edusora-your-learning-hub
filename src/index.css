@@ -136,10 +136,10 @@
 
   :root .glass-card {
     background: hsl(0 0% 100% / 0.55);
-    border: 1px solid hsl(0 0% 100% / 0.7);
+    border: 1px solid hsl(240 10% 88% / 0.8);
     box-shadow:
-      0 8px 32px -8px hsl(235 100% 8% / 0.06),
-      0 2px 8px -2px hsl(235 100% 8% / 0.04),
+      0 10px 40px -8px hsl(235 100% 8% / 0.12),
+      0 4px 16px -4px hsl(235 100% 8% / 0.08),
       inset 0 1px 0 0 hsl(0 0% 100% / 0.6);
   }
 
