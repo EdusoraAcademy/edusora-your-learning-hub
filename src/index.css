@@ -164,8 +164,11 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  .glow-gold-hover:hover {
-    box-shadow: 0 0 32px -2px hsl(var(--glow-gold) / 0.45), var(--shadow-soft);
+  :root .glow-gold-hover:hover {
+    box-shadow:
+      0 0 44px -2px hsl(var(--glow-gold) / 0.55),
+      0 0 16px -2px hsl(248 100% 34% / 0.15),
+      0 12px 40px -8px hsl(235 100% 8% / 0.14);
   }
 
   .dark .glow-gold-hover:hover {
