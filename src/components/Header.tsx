@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Dodali smo useNavigate i useLocation
 import { Moon, Sun, Menu, X } from "lucide-react";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [dark, setDark] = useState(() => {
     return localStorage.getItem("edusora-theme") === "dark";
   });
@@ -15,9 +17,29 @@ const Header = () => {
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: "smooth" });
+    
+    // Ako nismo na početnoj stranici (/), prvo navigiraj tamo
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollToId: id } });
+    } else {
+      // Ako smo već na početnoj, samo skroluj
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  // Ovaj deo služi da "uhvati" skrol nakon što se vratiš sa druge stranice
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollToId) {
+      const id = location.state.scrollToId;
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        el?.scrollIntoView({ behavior: "smooth" });
+        // Očisti state da ne skroluje svaki put kad osvežiš
+        window.history.replaceState({}, document.title);
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
