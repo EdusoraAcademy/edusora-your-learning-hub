@@ -3,9 +3,8 @@ import Footer from "@/components/Footer";
 import { User } from "lucide-react";
 
 const mentori = [
-  { ime: "Tarik Hadžirović", spec: "Programer & konsultant za pristupačnost", opis: "10+ godina iskustva u razvoju modernih i pristupačnih programa i web aplikacija." },
-  { ime: "Denin Husič", spec: "Digitalni Marketing", opis: "Stručnjak za SEO, PPC kampanje i strategije rasta." },
-  { ime: "Ensar Dragunjić", spec: "šmrkač opojnih supstanci", opis: "Narkoman s iskustvom u degustiranju mnogih opojnih droga i višegodišnji korisnik ustanova za odvikavanje." },
+  { ime: "Tarik Hadžirović", spec: "Suosnivač | Strategija, Logistika & IT", opis: "Tarik je onaj koji se brine da sve u Edusori funkcioniše besprijekorno – od serverske infrastrukture do dugoročne vizije. Kao osnivač platforme Blindography, Tarik je dokazao da tehnologija može i mora imati svrhu: rušenje prepreka za slijepe i slabovidne osobe.\nNjegova misija: Izbaciti suvišne informacije iz procesa učenja.\nZašto Edusora? "Dosta mi je neadekvatnih predavača i materijala koji skupljaju prašinu. Ovdje gradimo sistem koji je direktan, tehnički potkovan i odmah primjenjiv." },
+  { ime: "Dani Husić", spec: "Suosnivač | Dizajn, Psihologija & Vizuelni identitet", opis: "Dani je kreativna snaga Edusore. Sa nepunih 18 godina, on već definiše standarde modernog dizajna i razumije kako psihologija utiče na naše navike i uspjeh. Njegova svestranost ide od umjetnosti i crtanja, pa sve do vrhunske discipline – što dokazuje i treće mjesto na Međunarodnom takmičenju u masaži.\nNjegova specijalnost: Estetika koja inspiriše i definisanje ciljeva koji se ostvaruju.\nZašto Edusora? Dani vjeruje da je pokretanje ove akademije najbolji dokaz da se vizija može pretvoriti u stvarnost bez obzira na godine. On je tu da vam pomogne da vaše ideje dobiju oblik i strukturu." }
 ];
 
 const Mentori = () => (
@@ -15,7 +14,9 @@ const Mentori = () => (
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">Naši Mentori</h1>
         <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto">
-          Upoznajte stručnjake koji će vas voditi kroz proces učenja.
+          Upoznajte tim iza Edusore
+          Mi ne prodajemo diplome, mi prenosimo vještine koje koristimo svakodnevno.
+          Edusora nije nastala u kabinetu, već iz potrebe da učenje napokon dobije smisao. Mi smo generacija koja ne želi čekati godinama da bi počela stvarati. Zato smo tu – da vam skratimo put i damo alate koji rade u stvarnom svijetu.
         </p>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {mentori.map((m) => (
