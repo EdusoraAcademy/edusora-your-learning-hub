@@ -43,7 +43,7 @@ const Header = () => {
           <button
             onClick={() => setDark(!dark)}
             className="p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label="Toggle theme"
+            aria-label="Promijeni temu"
           >
             {dark ? <Sun className="w-5 h-5 text-secondary" /> : <Moon className="w-5 h-5 text-primary" />}
           </button>
