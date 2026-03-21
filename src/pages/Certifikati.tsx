@@ -30,9 +30,9 @@ const Certifikati = () => (
               <CheckCircle className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold mb-1">Verifikacija certifikata</h3>
+              <h3 className="font-semibold mb-1">Potvrda certifikata</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Svaki certifikat ima jedinstven QR kod i verifikacijski link koji omogućava poslodavcima da provjere autentičnost.
+                Svaki certifikat ima jedinstven QR kod i potvrdnu poveznicu koja omogućava poslodavcima da provjere autentičnost istog.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Certifikati = () => (
             <div>
               <h3 className="font-semibold mb-1">Portfolio integracija</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Certifikate možete dijeliti na LinkedIn-u, dodati u CV ili priložiti uz prijave za posao.
+                Certifikate možete dijeliti na LinkedInu, dodati u CV ili priložiti uz prijave za posao.
               </p>
             </div>
           </div>
