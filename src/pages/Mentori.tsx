@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { User } from "lucide-react";
 
 const mentori = [
-  { ime: "Amer Hodžić", spec: "Web Development & Full Stack", opis: "10+ godina iskustva u razvoju modernih web aplikacija." },
-  { ime: "Sara Delić", spec: "Digitalni Marketing", opis: "Stručnjakinja za SEO, PPC kampanje i strategije rasta." },
+  { ime: "Tarik Hadžirović", spec: "Programer & konsultant za pristupačnost", opis: "10+ godina iskustva u razvoju modernih i pristupačnih programa i web aplikacija." },
+  { ime: "Dani Husić", spec: "Digitalni Marketing", opis: "Stručnjakinja za SEO, PPC kampanje i strategije rasta." },
   { ime: "Marko Petrović", spec: "UI/UX Dizajn", opis: "Dizajner sa iskustvom u vodećim tech kompanijama." },
 ];
 
