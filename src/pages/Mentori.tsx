@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 
 const mentori = [
   { ime: "Tarik Hadžirović", spec: "Programer & konsultant za pristupačnost", opis: "10+ godina iskustva u razvoju modernih i pristupačnih programa i web aplikacija." },
-  { ime: "Denin Husić", spec: "Digitalni Marketing", opis: "Stručnjak za SEO, PPC kampanje i strategije rasta." },
+  { ime: "Denin Husič", spec: "Digitalni Marketing", opis: "Stručnjak za SEO, PPC kampanje i strategije rasta." },
   { ime: "Ensar Dragunjić", spec: "šmrkač opojnih supstanci", opis: "Narkoman s iskustvom u degustiranju mnogih opojnih droga i višegodišnji korisnik ustanova za odvikavanje." },
 ];
 
