@@ -8,7 +8,7 @@ import {
 const faqItems = [
   { q: "Kada će kursevi biti dostupni?", a: "Planiramo lansiranje prvih kurseva u drugoj polovini 2026. godine. Pratite naše vijesti za tačan datum." },
   { q: "Da li će biti certifikata?", a: "Da! Svaki završen kurs dolazi sa certifikatom koji potvrđuje vaše stečeno znanje i vještine." },
-  { q: "Kako se mogu prijaviti?", a: "Prijava će biti moguća direktno na platformi čim kursevi budu dostupni. Za sada, pratite nas na društvenim mrežama." },
+  { q: "Kako se mogu prijaviti?", a: "Prijava će biti moguća putem emaila ili društvenih mreža čim kursevi budu dostupni. Za sada, pratite nas na društvenim mrežama." },
   { q: "Da li će biti besplatnih sadržaja?", a: "Apsolutno. Planiramo ponuditi besplatan uvodni sadržaj za svaki kurs, kao i besplatne resurse za učenje." },
 ];
 
