@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Edusora Academy
 
-TODO: Document your project here
+Description coming soon...
