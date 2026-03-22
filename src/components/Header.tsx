@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom"; // Dodali smo useNavigate i useLocation
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import { useLiveRegion } from "@/components/ui/live-region"; // <-- dodat import
 
 const Header = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Header = () => {
     return localStorage.getItem("edusora-theme") === "dark";
   });
   const [menuOpen, setMenuOpen] = useState(false);
+  const announce = useLiveRegion(); // <-- dobijamo funkciju za najavu
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
@@ -18,28 +20,31 @@ const Header = () => {
   const scrollTo = (id: string) => {
     setMenuOpen(false);
     
-    // Ako nismo na početnoj stranici (/), prvo navigiraj tamo
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollToId: id } });
     } else {
-      // Ako smo već na početnoj, samo skroluj
       const el = document.getElementById(id);
       el?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Ovaj deo služi da "uhvati" skrol nakon što se vratiš sa druge stranice
   useEffect(() => {
     if (location.pathname === "/" && location.state?.scrollToId) {
       const id = location.state.scrollToId;
       setTimeout(() => {
         const el = document.getElementById(id);
         el?.scrollIntoView({ behavior: "smooth" });
-        // Očisti state da ne skroluje svaki put kad osvežiš
         window.history.replaceState({}, document.title);
       }, 100);
     }
   }, [location]);
+
+  const handleThemeToggle = () => {
+    const newDark = !dark;
+    setDark(newDark);
+    const message = `Tema je promijenjena u ${newDark ? "tamnu" : "svijetlu"}.`;
+    announce(message, 3000); // trajanje 3 sekunde
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
@@ -63,7 +68,7 @@ const Header = () => {
 
         <div className="flex items-center gap-3">
           <button
-            onClick={() => setDark(!dark)}
+            onClick={handleThemeToggle}
             className="p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Promijeni temu"
           >
