@@ -43,7 +43,7 @@ const Header = () => {
     const newDark = !dark;
     setDark(newDark);
     const message = `Tema je promijenjena u ${newDark ? "tamnu" : "svijetlu"}.`;
-    announce(message, 3000); // trajanje 3 sekunde
+    announce(message, 50);
   };
 
   return (
