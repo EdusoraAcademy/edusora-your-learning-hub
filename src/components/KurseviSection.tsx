@@ -1,23 +1,23 @@
-import { BookOpen, Code, TrendingUp } from "lucide-react";
+import { BookOpen, Code, TrendingUp, BrainCircuit, Palette, Globe } from "lucide-react";
 
 const kursevi = [
   {
-    naziv: "Web Dizajn & Razvoj",
-    opis: "Naučite kako kreirati moderne web stranice koristeći najnovije tehnologije.",
+    naziv: "AI Workflow",
+    opis: "Nauči šta su zapravo AI alati i kako ih pravilno koristiti za dubinsku analizu, rješavanje zadataka i učenje s razumijevanjem. Automatizuj 'smaračke' dijelove obaveza i uštedi sate vremena.",
     status: "U pripremi",
-    icon: Code,
+    icon: BrainCircuit,
   },
   {
     naziv: "Digitalni Marketing",
-    opis: "Savladajte vještine digitalnog marketinga i društvenih mreža.",
+    opis: "Od ideje do tvog prvog sajta sa 10 EUR budžeta. Pokazaćemo ti tačan proces kako smo mi napravili Edusoru od nule.",
     status: "U razvoju",
-    icon: TrendingUp,
+    icon: Globe,
   },
   {
     naziv: "UI/UX Dizajn",
-    opis: "Dizajnirajte korisničke interfejse koji oduševljavaju i konvertuju.",
+    opis: "Pretvori svoj profil ili hobi u prepoznatljiv brend. Nauči osnove dizajna, psihologiju boja i kako privući pažnju na mrežama.",
     status: "Dolazi uskoro",
-    icon: BookOpen,
+    icon: Palette,
   },
 ];
 
