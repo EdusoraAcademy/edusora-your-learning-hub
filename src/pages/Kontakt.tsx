@@ -5,7 +5,7 @@ import { Instagram, Mail, Music2 } from "lucide-react";
 const kontakti = [
   { icon: Instagram, naziv: "Instagram", link: "https://instagram.com/edusora.academy", label: "@edusora.academy" },
   { icon: Music2, naziv: "TikTok", link: "https://tiktok.com/@edusora.academy", label: "@edusora.academy" },
-  { icon: Mail, naziv: "E-pošta", link: "mailto:kontakt@edusora.academy", label: "kontakt@edusora.academy" },
+  { icon: Mail, naziv: "E-pošta", link: "mailto:info@edusora.academy", label: "info@edusora.academy" },
 ];
 
 const Kontakt = () => (
