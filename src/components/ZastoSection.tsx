@@ -1,7 +1,7 @@
 import { Target, Lightbulb, BookCheck, RefreshCw } from "lucide-react";
 
 const prednosti = [
-  { icon: Target, naslov: "Fokus na praktično znanje", opis: "Svaki kurs je dizajniran da vam pruži vještine primjenjive u stvarnom svijetu." },
+  { icon: Target, naslov: "Fokus na praktično znanje", opis: "Svaki kurs je dizajnovan tako da vam pruži vještine primjenjive u stvarnom svijetu." },
   { icon: Lightbulb, naslov: "Moderni i relevantni kursevi", opis: "Pratimo trendove i ažuriramo sadržaj kako bi bio uvijek aktualan." },
   { icon: BookCheck, naslov: "Jednostavno objašnjeno", opis: "Gradivo je strukturisano tako da ga svako može razumjeti i pratiti." },
   { icon: RefreshCw, naslov: "Kontinuirano unapređenje", opis: "Konstantno unapređujemo sadržaj na osnovu povratnih informacija." },
