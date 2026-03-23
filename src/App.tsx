@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { LiveRegionProvider } from "@/components/ui/live-region"; // Nova linija
+import { LiveRegionProvider } from "@/components/ui/live-region";
 import Index from "./pages/Index.tsx";
 import Mentori from "./pages/Mentori.tsx";
 import Certifikati from "./pages/Certifikati.tsx";
