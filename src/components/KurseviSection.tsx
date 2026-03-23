@@ -9,7 +9,7 @@ const kursevi = [
   },
   {
     naziv: "Digitalni Marketing",
-    opis: "Od ideje do tvog prvog sajta sa 10 EUR budžeta. Pokazaćemo ti tačan proces kako smo mi napravili Edusoru od nule.",
+    opis: "Od ideje do tvoje prve web stranice sa 20 eura budžeta. Pokazat ćemo ti tačan proces kako smo mi napravili Edusoru od nule.",
     status: "U razvoju",
     icon: Globe,
   },
