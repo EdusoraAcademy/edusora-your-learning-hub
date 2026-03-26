@@ -8,14 +8,14 @@ const kursevi = [
     icon: BrainCircuit,
   },
   {
-    naziv: "Digitalni Marketing",
-    opis: "Od ideje do tvoje prve web stranice sa 20 eura budžeta. Pokazat ćemo ti tačan proces kako smo mi napravili Edusoru od nule.",
+    naziv: "Osnove informatike",
+    opis: "Savladaj ključne vještine digitalnog svijeta kroz konkretne primjere, bez suvišne teorije i komplikovanih termina. Nauči kako da tehnologija radi za tebe, a ne ti za nju.",
     status: "U razvoju",
     icon: Globe,
   },
   {
-    naziv: "UI/UX Dizajn",
-    opis: "Pretvori svoj profil ili hobi u prepoznatljiv brend. Nauči osnove dizajna, psihologiju boja i kako privući pažnju na mrežama.",
+    naziv: "Digitalni Marketing",
+    opis: "Od ideje do tvoje prve web stranice sa 20 eura budžeta. Pokazat ćemo ti tačan proces kako smo mi napravili Edusoru od nule.",
     status: "Dolazi uskoro",
     icon: Palette,
   },
