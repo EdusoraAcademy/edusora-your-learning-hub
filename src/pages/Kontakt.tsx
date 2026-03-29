@@ -1,8 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Instagram, Mail, Music2, Facebook } from "lucide-react"; // Dodan Facebook import
+import { Instagram, Mail, Music2, Facebook, Youtube } from "lucide-react"; // Dodan Youtube import
 
 const kontakti = [
+  { 
+    icon: Youtube, // YouTube je prvi jer je ključan za edukaciju
+    naziv: "YouTube", 
+    link: "https://www.youtube.com/@edusora.academy", 
+    label: "Edusora Academy" 
+  },
   { 
     icon: Instagram, 
     naziv: "Instagram", 
@@ -45,7 +51,7 @@ const Kontakt = () => (
               href={k.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 hover-lift transition-transform hover:-translate-y-1"
+              className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 hover-lift transition-all hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-yellow-500/10"
             >
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <k.icon className="w-6 h-6 text-primary" />
