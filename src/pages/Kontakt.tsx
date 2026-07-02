@@ -45,23 +45,29 @@ const Kontakt = () => (
           Povežite se s nama putem društvenih mreža ili e-pošte.
         </p>
         <div className="space-y-4">
-          {kontakti.map((k) => (
-            <a
-              key={k.naziv}
-              href={k.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 hover-lift transition-all hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-yellow-500/10"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <k.icon className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-sm">{k.naziv}</h3>
-                <p className="text-sm text-muted-foreground">{k.label}</p>
-              </div>
-            </a>
-          ))}
+          {kontakti.map((k) => {
+            const opensNewTab = !k.link.startsWith("mailto:");
+            return (
+              <a
+                key={k.naziv}
+                href={k.link}
+                target={opensNewTab ? "_blank" : undefined}
+                rel={opensNewTab ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-5 rounded-2xl border border-border bg-card p-6 hover-lift transition-all hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-yellow-500/10"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <k.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm">
+                    {k.naziv}
+                    {opensNewTab && <span className="sr-only"> (otvara se u novoj kartici)</span>}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{k.label}</p>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </main>
