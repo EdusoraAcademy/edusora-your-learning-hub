@@ -46,7 +46,7 @@ export const LiveRegionProvider: React.FC<LiveRegionProviderProps> = ({ children
       // Clear again once the announcement has had time to be spoken, so the
       // live region doesn't leave stale text sitting in the accessibility
       // tree (e.g. reachable at the end of the document via Ctrl+End).
-      timeoutRef.current = window.setTimeout(() => setMessage(""), 3000);
+      timeoutRef.current = window.setTimeout(() => setMessage(""), 50000);
     });
   }, []);
 
