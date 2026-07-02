@@ -30,13 +30,31 @@ interface LiveRegionProviderProps {
 export const LiveRegionProvider: React.FC<LiveRegionProviderProps> = ({ children }) => {
   const [politeMessage, setPoliteMessage] = React.useState("");
   const [assertiveMessage, setAssertiveMessage] = React.useState("");
+  const politeTimeoutRef = React.useRef<number>();
+  const assertiveTimeoutRef = React.useRef<number>();
 
   const announce = React.useCallback<AnnounceFunction>((message, politeness = "polite") => {
     const setMessage = politeness === "assertive" ? setAssertiveMessage : setPoliteMessage;
+    const timeoutRef = politeness === "assertive" ? assertiveTimeoutRef : politeTimeoutRef;
+
+    window.clearTimeout(timeoutRef.current);
     // Clear before setting so repeated identical messages are re-announced
     // by screen readers instead of being silently ignored as "unchanged".
     setMessage("");
-    requestAnimationFrame(() => setMessage(message));
+    requestAnimationFrame(() => {
+      setMessage(message);
+      // Clear again once the announcement has had time to be spoken, so the
+      // live region doesn't leave stale text sitting in the accessibility
+      // tree (e.g. reachable at the end of the document via Ctrl+End).
+      timeoutRef.current = window.setTimeout(() => setMessage(""), 3000);
+    });
+  }, []);
+
+  React.useEffect(() => {
+    return () => {
+      window.clearTimeout(politeTimeoutRef.current);
+      window.clearTimeout(assertiveTimeoutRef.current);
+    };
   }, []);
 
   return (
