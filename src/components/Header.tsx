@@ -1,7 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import { useLiveRegion } from "@/components/ui/live-region"; // <-- dodat import
+import { useAnnounce } from "@/lib/accessibility";
+
+const sectionLabels: Record<string, string> = {
+  kursevi: "Kursevi",
+  "o-nama": "O nama",
+  vijesti: "Vijesti",
+};
+
+const MOBILE_MENU_ID = "mobile-menu";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -10,21 +18,33 @@ const Header = () => {
     return localStorage.getItem("edusora-theme") === "dark";
   });
   const [menuOpen, setMenuOpen] = useState(false);
-  const announce = useLiveRegion(); // <-- dobijamo funkciju za najavu
+  const announce = useAnnounce();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
     localStorage.setItem("edusora-theme", dark ? "dark" : "light");
   }, [dark]);
 
+  const focusSection = useCallback(
+    (id: string) => {
+      const el = document.getElementById(id);
+      el?.scrollIntoView({ behavior: "smooth" });
+      el?.focus({ preventScroll: true });
+      if (sectionLabels[id]) {
+        announce(`Prešli ste na sekciju: ${sectionLabels[id]}`);
+      }
+    },
+    [announce],
+  );
+
   const scrollTo = (id: string) => {
     setMenuOpen(false);
-    
+
     if (location.pathname !== "/") {
       navigate("/", { state: { scrollToId: id } });
     } else {
-      const el = document.getElementById(id);
-      el?.scrollIntoView({ behavior: "smooth" });
+      focusSection(id);
     }
   };
 
@@ -32,18 +52,28 @@ const Header = () => {
     if (location.pathname === "/" && location.state?.scrollToId) {
       const id = location.state.scrollToId;
       setTimeout(() => {
-        const el = document.getElementById(id);
-        el?.scrollIntoView({ behavior: "smooth" });
+        focusSection(id);
         window.history.replaceState({}, document.title);
       }, 100);
     }
-  }, [location]);
+  }, [location, focusSection]);
 
   const handleThemeToggle = () => {
     const newDark = !dark;
     setDark(newDark);
-    const message = `Tema je promijenjena u ${newDark ? "tamnu" : "svijetlu"}.`;
-    announce(message, 50);
+    announce(`Tema je promijenjena u ${newDark ? "tamnu" : "svijetlu"}.`);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    menuButtonRef.current?.focus();
+  };
+
+  const handleMenuKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Escape") {
+      event.stopPropagation();
+      closeMenu();
+    }
   };
 
   return (
@@ -71,10 +101,18 @@ const Header = () => {
             onClick={handleThemeToggle}
             className="p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Promijeni temu"
+            aria-pressed={dark}
           >
             {dark ? <Sun className="w-5 h-5 text-secondary" /> : <Moon className="w-5 h-5 text-primary" />}
           </button>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
+          <button
+            ref={menuButtonRef}
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            aria-label={menuOpen ? "Zatvori meni" : "Otvori meni"}
+            aria-expanded={menuOpen}
+            aria-controls={MOBILE_MENU_ID}
+          >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
@@ -82,11 +120,16 @@ const Header = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-2">
+        <nav
+          id={MOBILE_MENU_ID}
+          aria-label="Mobilna navigacija"
+          onKeyDown={handleMenuKeyDown}
+          className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-2"
+        >
           <button onClick={() => scrollTo("kursevi")} className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground">Kursevi</button>
           <button onClick={() => scrollTo("o-nama")} className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground">O nama</button>
           <button onClick={() => scrollTo("vijesti")} className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground">Vijesti</button>
-        </div>
+        </nav>
       )}
     </header>
   );
