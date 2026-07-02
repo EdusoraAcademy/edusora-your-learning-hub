@@ -64,17 +64,24 @@ const Header = () => {
     announce(`Tema je promijenjena u ${newDark ? "tamnu" : "svijetlu"}.`);
   };
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setMenuOpen(false);
     menuButtonRef.current?.focus();
-  };
+  }, []);
 
-  const handleMenuKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === "Escape") {
-      event.stopPropagation();
-      closeMenu();
-    }
-  };
+  // Focus stays on the toggle button when the menu opens, so listen on the
+  // document rather than the menu itself — a handler on the menu would never
+  // see Escape unless focus had already moved inside it.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen, closeMenu]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
@@ -123,7 +130,6 @@ const Header = () => {
         <nav
           id={MOBILE_MENU_ID}
           aria-label="Mobilna navigacija"
-          onKeyDown={handleMenuKeyDown}
           className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-2"
         >
           <button onClick={() => scrollTo("kursevi")} className="block w-full text-left py-2 text-sm font-medium text-muted-foreground hover:text-foreground">Kursevi</button>
