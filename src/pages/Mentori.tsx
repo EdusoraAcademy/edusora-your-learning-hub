@@ -10,7 +10,7 @@ const mentori = [
 const Mentori = () => (
   <>
     <Header />
-    <main className="pt-24 pb-16">
+    <main id="main-content" tabIndex={-1} className="pt-24 pb-16 focus:outline-none">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">Naši Mentori</h1>
         <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto">
