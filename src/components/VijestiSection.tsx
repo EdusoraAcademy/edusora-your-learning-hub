@@ -7,7 +7,7 @@ const vijesti = [
 ];
 
 const VijestiSection = () => (
-  <section id="vijesti" className="py-24">
+  <section id="vijesti" tabIndex={-1} className="py-24 focus:outline-none">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Vijesti</h2>
       <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto">

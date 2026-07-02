@@ -8,7 +8,7 @@ const prednosti = [
 ];
 
 const ZastoSection = () => (
-  <section id="o-nama" className="py-24 bg-muted/30">
+  <section id="o-nama" tabIndex={-1} className="py-24 bg-muted/30 focus:outline-none">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Zašto baš Edusora?</h2>
       <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto">
