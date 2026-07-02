@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 const Index = () => (
   <>
     <Header />
-    <main>
+    <main id="main-content" tabIndex={-1} className="focus:outline-none">
       <HeroSection />
       <KurseviSection />
       <ZastoSection />

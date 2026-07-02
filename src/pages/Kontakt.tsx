@@ -38,7 +38,7 @@ const kontakti = [
 const Kontakt = () => (
   <>
     <Header />
-    <main className="pt-24 pb-16">
+    <main id="main-content" tabIndex={-1} className="pt-24 pb-16 focus:outline-none">
       <div className="container mx-auto px-4 max-w-2xl">
         <h1 className="text-4xl font-bold text-center mb-4">Kontakt</h1>
         <p className="text-muted-foreground text-center mb-14">
