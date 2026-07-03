@@ -96,7 +96,6 @@ const Header = () => {
             onClick={handleThemeToggle}
             className="p-2 rounded-lg hover:bg-muted transition-colors"
             aria-label="Promijeni temu"
-            aria-pressed={dark}
           >
             {dark ? <Sun className="w-5 h-5 text-secondary" /> : <Moon className="w-5 h-5 text-primary" />}
           </button>
