@@ -14,7 +14,7 @@ const Mentori = () => (
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-4">Naši Mentori</h1>
         <p className="text-muted-foreground text-center mb-14 max-w-lg mx-auto">
-          Upoznajte tim iza Edusore
+          Upoznajte tim iza Edusore\n
           Mi ne prodajemo diplome, mi prenosimo vještine koje koristimo svakodnevno.
           Edusora nije nastala u kabinetu, već iz potrebe da učenje napokon dobije smisao. Mi smo generacija koja ne želi čekati godinama da bi počela stvarati. Zato smo tu – da vam skratimo put i damo alate koji rade u stvarnom svijetu.
         </p>
