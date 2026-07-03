@@ -3,12 +3,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useAnnounce } from "@/lib/accessibility";
 
-const sectionLabels: Record<string, string> = {
-  kursevi: "Kursevi",
-  "o-nama": "O nama",
-  vijesti: "Vijesti",
-};
-
 const MOBILE_MENU_ID = "mobile-menu";
 
 const Header = () => {
@@ -26,17 +20,11 @@ const Header = () => {
     localStorage.setItem("edusora-theme", dark ? "dark" : "light");
   }, [dark]);
 
-  const focusSection = useCallback(
-    (id: string) => {
-      const el = document.getElementById(id);
-      el?.scrollIntoView({ behavior: "smooth" });
-      el?.focus({ preventScroll: true });
-      if (sectionLabels[id]) {
-        announce(`Prešli ste na sekciju: ${sectionLabels[id]}`);
-      }
-    },
-    [announce],
-  );
+  const focusSection = useCallback((id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth" });
+    el?.focus({ preventScroll: true });
+  }, []);
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
