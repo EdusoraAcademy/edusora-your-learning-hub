@@ -3,7 +3,7 @@ import { BookOpen, Code, TrendingUp, BrainCircuit, Palette, Globe } from "lucide
 const kursevi = [
   {
     naziv: "AI Workflow",
-    opis: "Nauči šta su zapravo AI alati i kako ih pravilno koristiti za dubinsku analizu, rješavanje zadataka i učenje s razumijevanjem. Kurs obuhvata 2 časa od 45 minuta. Automatizuj 'smaračke' dijelove obaveza i uštedi sate vremena.",
+    opis: "Nauči šta su zapravo AI alati i kako ih pravilno koristiti za dubinsku analizu, rješavanje zadataka i učenje s razumijevanjem. Kurs obuhvata dva časa od 45 minuta. Automatizuj 'smaračke' dijelove obaveza i uštedi sate vremena.",
     status: "U pripremi",
     icon: BrainCircuit,
   },
