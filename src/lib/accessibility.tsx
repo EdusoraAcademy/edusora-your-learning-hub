@@ -95,13 +95,11 @@ export const SkipLink: React.FC<SkipLinkProps> = ({ targetId, children }) => (
 );
 
 /**
- * On route change: updates the document title, moves focus to the main
- * landmark, and announces the new page so screen reader users get the same
- * "new page" context they'd get from a full page load in an SPA.
+ * On route change: updates the document title and moves focus to the main
+ * landmark, mirroring the focus reset of a full page load in an SPA.
  */
 export const useAnnounceRouteChange = (getPageLabel: (pathname: string) => string) => {
   const location = useLocation();
-  const announce = useAnnounce();
   const isFirstRender = React.useRef(true);
 
   React.useEffect(() => {
@@ -115,6 +113,5 @@ export const useAnnounceRouteChange = (getPageLabel: (pathname: string) => strin
 
     const mainContent = document.getElementById("main-content");
     mainContent?.focus();
-    announce(`Otvorena stranica: ${label}`);
-  }, [location.pathname, getPageLabel, announce]);
+  }, [location.pathname, getPageLabel]);
 };
